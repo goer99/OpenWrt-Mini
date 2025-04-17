@@ -2,8 +2,8 @@ name:  OpenWrt-基础版
 
 on: 
   workflow_dispatch:
-#  schedule:
-#    - cron: 01 00 * * *
+  schedule:
+    - cron: 0 0 22 * *
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
@@ -124,9 +124,9 @@ jobs:
       run: |
         cd openwrt/bin/targets/*/*
         rm -rf packages && mkdir packages
+        # 根据自己需要删除不需要的固件格式和不必要文件，例如esxi格式的固件等
         find -name "*esxi-flat.vmdk*" | xargs -i mv -f {} packages
         find -name "*kernel.bin*" | xargs -i mv -f {} packages
-        find -name "*rootfs*" | xargs -i mv -f {} packages
         find -name "*.manifest*" | xargs -i mv -f {} packages
         find -name "*vmlinuz*" | xargs -i mv -f {} packages
         find -name "*esxi.vmdk*" | xargs -i mv -f {} packages
