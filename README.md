@@ -1,5 +1,5 @@
 <div align="center">
-<h1>OpenWrt-Mini  急速精简版，</h1>
+<h1>OpenWrt-Mini  急速精简版 </h1>
 </div>
 
 ## 固件说明: (支持ipv6)
